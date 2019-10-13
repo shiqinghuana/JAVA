@@ -43,7 +43,7 @@ class Hahah {
 
 
     public static void main(String[] args) {
-        Hahah sdf = new Hahah("4",87)
+        Hahah sdf = new Hahah("411111",87)
 
         println(sdf.hahha())
     }
