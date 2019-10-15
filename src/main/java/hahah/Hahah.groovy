@@ -1,5 +1,9 @@
 package hahah
 
+
+
+import org.junit.BeforeClass
+
 class Hahah {
     def x;
     def y;
@@ -14,9 +18,8 @@ class Hahah {
     }
 
     def jjj(){
-
-        return x+y
-    }
+            return x+y
+        }
 
 
     def hahha(){
