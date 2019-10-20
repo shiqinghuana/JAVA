@@ -11,7 +11,7 @@ class LogResult {
         // 存放目录
         String dir = 'src/result'
         if (dir){
-            def imageDir = new File(dir)
+            File imageDir = new File(dir)
             if (!imageDir.exists()){
                 imageDir.mkdirs()
             }
