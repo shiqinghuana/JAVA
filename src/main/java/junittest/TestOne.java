@@ -6,30 +6,34 @@ import java.util.Arrays;
 
 public class TestOne {
 
-    void show(int[]arr){
-        while(true){
-            int m = 0;
-            for(int i=0;i<arr.length-1;i++){
-                int n;
-                if(arr[i]>arr[i+1]){
-                    n=arr[i];
-                    arr[i]=arr[i+1];
-                    arr[i+1]=n;
-                    m++;
+    int show(int low,int col){
+        if (col==0||low==col){
+            return 1;
+        }else {
+            return show(low-1,col-1)+show(low-1,col);
+        }
+    }
+    //要打印几行
+    void or(int x){
+        for (int i = 1; i <=x ; i++) {
+            for (int j = 1; j <=2*x-1 ; j++) {
+                if (j<x+i && j>x-i) {
+                    for (int z = 1; z <=i ; z++) {
+                        System.out.print(show(i,z)+" ");
+                    }
+
+                }else {
+                    System.out.print(" ");
                 }
             }
-                if(m==0){
-                    System.out.println(Arrays.toString(arr));
-                    break;
-                }
+            System.out.println();
         }
-
     }
 
     public static void main(String[] args) {
         TestOne testOne = new TestOne();
-        int[]arr={1,6,90,7,700};
-        testOne.show(arr);
+
+        testOne.or(3);
     }
 
 

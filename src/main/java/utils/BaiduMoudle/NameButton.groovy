@@ -1,9 +1,9 @@
 package utils.BaiduMoudle
 
-import geb.navigator.EmptyNavigator
+
 import geb.navigator.Navigator
 import groovy.util.logging.Slf4j
-import org.openqa.selenium.WebElement
+import uitestlib.uicommon.modules.StableEnhancedMoudle
 
 @Slf4j
 class NameButton  extends StableEnhancedMoudle {
@@ -61,10 +61,17 @@ class NameButton  extends StableEnhancedMoudle {
         }
 
     }
+
+    List<Navigator> getAllChild(){
+
+       return getChildrenRecursively(elementsToNavigator("div#wrapper"))
+
+    }
+
         Navigator returNoEmptyNavigator(Navigator...args){
             for(i in args) {
                 def element =  browser.navigatorFactory.createFromNavigators(i)
-                if (!isEmpty(element)){
+                if (element?.isEmpty()){
                     return i
                 }
             }

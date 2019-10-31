@@ -48,9 +48,11 @@ class BaiduUntilsCollection extends Page{
         Browser browser = new Browser(driver: new ChromeDriver())
 
         Browser.drive (browser){
+
             to BaiduUntilsCollection
             sleep(5)
-            ClickName("新闻",)
+            print(nameButton.getAllChild())
+         //   ClickName("新闻",)
            // quit()
         }
     }
