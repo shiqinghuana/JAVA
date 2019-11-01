@@ -5,14 +5,16 @@ import geb.Page
 import geb.navigator.Navigator
 import groovy.util.logging.Slf4j
 import org.openqa.selenium.chrome.ChromeDriver
+import uitestlib.uicommon.pages.ElementWaitingPage
 
 @Slf4j
-class BaiduPage extends Page{
+class BaiduPage extends ElementWaitingPage{
 
     static url = "https://www.baidu.com"
 
     static content = {
         Baidu {module(BaiduModile)}
+
     }
     static at ={Baidu.Header}
 
@@ -24,6 +26,7 @@ class BaiduPage extends Page{
            // Baidu.open()
             waitFor {Baidu.Header}
            // at = {$("title",text:contains("百度地图"))}
+            element("sss","ss":"hahha")
             log.info("打开百度地图成功")
             Baidu.form.with {
                 wd = "hahah"

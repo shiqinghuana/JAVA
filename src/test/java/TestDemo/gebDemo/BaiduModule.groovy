@@ -11,6 +11,7 @@ class BaiduModile extends Module{
         BaiduMap  {$("#u1 > a:nth-child(3)")}
         form {$("form")}
         button {form.$("input.s_ipt")}
+
     }
 
     void open(){
