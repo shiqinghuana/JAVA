@@ -9,6 +9,7 @@ import org.openqa.selenium.By
  * 提供元素查找基本能力
  * Created by QingHuan on 2019/11/2 0:00
  */
+@SuppressWarnings('unused')
 @Slf4j
 class ElementWaitingPage extends Page {
     static at = { true }
@@ -224,17 +225,17 @@ class ElementWaitingPage extends Page {
      * @return
      */
 
-    Navigator elementExists(Map<String, Object> attributes,  String selector,int index){
+    boolean elementExists(Map<String, Object> attributes,  String selector,int index){
         boolean exist
         try{
             if (attributes){
                 waitForElement(attributes,3,selector,index)
             }
             else{
-                waitForElement(3,selector,index)
+                waitForElement(selector,3,index)
             }
             exist = true
-        }catch(Throwable throwable){
+        }catch(Throwable ignored){
             exist = false
         }
         return exist
@@ -309,11 +310,11 @@ class ElementWaitingPage extends Page {
      * @param timeout
      */
     void waitUntilElementDisappear(String cssSelector,double timeout = 10){
-        int preLoginWait = timeout * 0.2
-        if (preLoginWait <2){
-            preLoginWait = 2
+        int preLoadingWait =  timeout * 0.2
+        if (preLoadingWait <2){
+            preLoadingWait = 2
         }
-        sleep(preLoginWait * 1000)
+        sleep(preLoadingWait * 1000)
         waitFor(timeout){!$(cssSelector)}
     }
 
