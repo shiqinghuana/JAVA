@@ -31,6 +31,8 @@ class ScrollableDiv extends StableEnhancedMoudle{
         scrollFromTopToDownByPercent(navigator,100)
     }
 
+
+    
     /**
      * 从上到下按百分比移动滚动条
      * @param element
